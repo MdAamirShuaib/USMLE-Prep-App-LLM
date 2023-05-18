@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import { Bars } from "react-loader-spinner";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
@@ -16,6 +16,7 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
   item,
   initialMessages,
 }) => {
+  const bottomRef = useRef<HTMLDivElement>(null);
   const [messages, setMessages] = useState<any>(initialMessages);
 
   const [userResponse, setUserResponse] = useState("");
@@ -27,8 +28,13 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
     router.push("/");
   };
 
+  useEffect(() => {
+    bottomRef?.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   const handleSubmitText = async (e: any) => {
     e.preventDefault();
+    const oldMessages: any = [...messages];
     const newMessages: any = [
       ...messages,
       { content: userResponse, role: "user" },
@@ -37,8 +43,15 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
     setUserResponse("");
     setisLoading(true);
     const data = await InitiateAiConversation(newMessages, item);
-    setMessages([...newMessages, { content: data, role: "assistant" }]);
-    setisLoading(false);
+    if (data === "No response") {
+      setMessages([...oldMessages]);
+      setisLoading(false);
+    }
+    if (data !== "No response") {
+      setMessages([...newMessages, { content: data, role: "assistant" }]);
+      setisLoading(false);
+      bottomRef?.current?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleTextChange = (e: any) => {
@@ -137,6 +150,7 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
           </div>
         </form>
       </div>
+      <div ref={bottomRef} />
     </div>
   );
 };

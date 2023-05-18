@@ -4,7 +4,13 @@ import { useEffect, useState } from "react";
 import SelectedItemHomePage from "@/app/components/SelectedItemHomePage";
 
 export default function ItemHome() {
-  const [selectedItem, setSelectedItem] = useState<object>({});
+  const [selectedItem, setSelectedItem] = useState<object>({
+    title: "Explain Concepts",
+    description:
+      "Get Expert assistance and help in preparing for the USMLE Step 1 exam by getting personalized guidance, explaining complex concepts, and answer explanations.",
+    prompt:
+      "As an Expert Coach, you are responsible for helping USMLE Step 1 candidate understand the concepts and topics covered in the exam. Your role is to provide positive, warm, and reassuring guidance to the candidates and explain complex concepts in a manner that is easily understandable.",
+  });
   const [messages, setMessages] = useState<any>([
     {
       content:
@@ -12,14 +18,6 @@ export default function ItemHome() {
       role: "assistant",
     },
   ]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await GetSelectedItemData("Explain Concepts");
-      setSelectedItem(data);
-    }
-    fetchData();
-  }, [setSelectedItem]);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
