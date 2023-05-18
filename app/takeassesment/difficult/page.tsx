@@ -1,5 +1,4 @@
 "use client";
-import GetSelectedItemData from "@/app/components/GetSelectedItemData";
 import { useState } from "react";
 import SelectedItemHomePage from "@/app/components/SelectedItemHomePage";
 
