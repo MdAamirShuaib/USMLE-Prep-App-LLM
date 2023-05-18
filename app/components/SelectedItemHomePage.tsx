@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { Bars } from "react-loader-spinner";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -48,7 +48,7 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
   return (
     <div className="flex flex-col items-center justify-between w-full h-full">
       <div className="flex flex-col items-center justify-center">
-        <div className="text-3xl font-bold font-sans text-lightBlueText">
+        <div className="text-3xl font-bold font-sans text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
           {item.title}
           <button
             className="hover:scale-[1.03] mx-4 px-1 rounded-sm active:scale-[.99] text-sm text-red-500"
