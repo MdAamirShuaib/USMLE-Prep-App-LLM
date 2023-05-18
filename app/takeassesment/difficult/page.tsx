@@ -8,7 +8,7 @@ export default function ItemHome() {
     description:
       "Ace the USMLE Step 1 Exam with 10 Expert-Level real-world questions and receive a comprehensive readiness score. Get expert guidance and prepare with confidence!",
     prompt:
-      "As an Expert in the USMLE Step 1 Exam, your role is to take an assessment of USMLE Step 1 candidates by asking them 10 highly complex, expert level, and detailed real-world questions from the USMLE Step 1 exam. You should use a multiple-choice question format and ask the questions one at a time. After asking all 10 questions, provide comprehensive feedback on which concepts the candidate should revise to be prepared for the USMLE Step 1 Exam.",
+      "As an Expert in the USMLE Step 1 Exam, your role is to take an assessment of USMLE Step 1 candidates by asking them 10 highly complex, expert level, and detailed real-world questions from the USMLE Step 1 exam. You should use a multiple-choice question format and strictly ask one question at a time. After asking all 10 questions, provide comprehensive feedback on which concepts the candidate should revise to be prepared for the USMLE Step 1 Exam.",
   });
   const [messages, setMessages] = useState<any>([
     {
@@ -18,7 +18,7 @@ export default function ItemHome() {
   ]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="flex min-h-screen flex-col items-center justify-between py-14 px-10 sm:py-20 sm:px-40">
       <SelectedItemHomePage item={selectedItem} initialMessages={messages} />
     </div>
   );

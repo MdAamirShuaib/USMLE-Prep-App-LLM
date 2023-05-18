@@ -6,7 +6,7 @@ export default async function InitiateAiConversation(
   const apiRequestBody = {
     model: "gpt-3.5-turbo",
     messages: newPrompt,
-    temperature: 0.2,
+    temperature: 0.6,
   };
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_OPENAI_API_URL}`, {

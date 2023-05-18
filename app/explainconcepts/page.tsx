@@ -19,7 +19,7 @@ export default function ItemHome() {
   ]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="flex min-h-screen flex-col items-center justify-between py-14 px-10 sm:py-20 sm:px-40">
       <SelectedItemHomePage item={selectedItem} initialMessages={messages} />
     </div>
   );

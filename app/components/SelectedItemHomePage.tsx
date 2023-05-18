@@ -70,11 +70,11 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
             <FontAwesomeIcon icon={faArrowRightFromBracket} />
           </button>
         </div>
-        <div className="mt-3 w-10/12 sm:w-4/5 text-whiteText text-justify sm:text-center">
+        <div className="mt-3 w-full text-whiteText text-justify sm:text-center">
           {item.description}
         </div>
       </div>
-      <div className="flex flex-col mt-8 w-11/12 sm:w-4/5">
+      <div className="flex flex-col mt-8 w-full">
         {messages.map((message: any, index: number) =>
           message.role === "assistant" ? (
             <div
