@@ -5,7 +5,7 @@ export default async function InitiateAiConversation(
   item: any
 ) {
   const { data } = await axios.post(
-    "http://localhost:8000/initiateAIConversation",
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/initiateAIConversation`,
     {
       messages: newMessages,
       itemName: item.title,

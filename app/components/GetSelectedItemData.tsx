@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default async function GetSelectedItemData(selectedItem: string) {
   const { data } = await axios.post(
-    "http://localhost:8000/getSelectedItemDetails",
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/getSelectedItemDetails`,
     { selectedItem: selectedItem }
   );
   return data;

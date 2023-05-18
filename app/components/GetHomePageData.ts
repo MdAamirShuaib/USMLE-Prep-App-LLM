@@ -1,6 +1,10 @@
+import axios from "axios";
+
 async function GetHomePageData() {
-  const response = await fetch("http://localhost:8000/getItems");
-  const data = await response.json();
+  const { data } = await axios.get(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/getItems`
+  );
+
   return data;
 }
 
