@@ -25,7 +25,7 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
   const router = useRouter();
 
   const handleExit = () => {
-    router.push("/");
+    router.back();
   };
 
   useEffect(() => {
@@ -70,7 +70,7 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
             <FontAwesomeIcon icon={faArrowRightFromBracket} />
           </button>
         </div>
-        <div className="mt-3 w-full text-whiteText text-justify sm:text-center">
+        <div className="mt-3 w-full text-slate-300 text-justify sm:text-center">
           {item.description}
         </div>
       </div>
