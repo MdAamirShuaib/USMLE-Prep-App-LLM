@@ -29,7 +29,7 @@ const HomePage = () => {
           {homeData.map((item: any) => (
             <div
               onClick={() => handleItemSelect(item)}
-              className="flex flex-col px-8 py-4 w-[400px] bg-bgGrey h-full rounded-3xl mx-6 cursor-pointer border border-bgDark hover:border-whiteText hover:scale-105 transition duration-300 mb-10"
+              className="flex flex-col px-8 py-4 w-[270px] sm:w-[400px] bg-bgGrey h-full rounded-3xl mx-6 cursor-pointer border border-bgDark hover:border-whiteText hover:scale-105 transition duration-300 mb-10"
               key={item.title}
             >
               <div className="flex flex-col items-center justify-center text-transparent text-2xl bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 font-bold mt-1">

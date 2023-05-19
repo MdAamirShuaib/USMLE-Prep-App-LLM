@@ -61,7 +61,7 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
   return (
     <div className="flex flex-col items-center justify-between w-full h-full">
       <div className="flex flex-col items-center justify-center">
-        <div className="text-3xl font-bold font-sans text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
+        <div className="text-3xl font-bold font-sans text-transparent items-center bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
           {item.title}
           <button
             className="hover:scale-[1.03] mx-4 px-1 rounded-sm active:scale-[.99] text-sm text-red-500"
@@ -70,7 +70,7 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
             <FontAwesomeIcon icon={faArrowRightFromBracket} />
           </button>
         </div>
-        <div className="mt-3 w-full text-slate-300 text-justify sm:text-center">
+        <div className="mt-3 w-full text-slate-300 sm:text-center">
           {item.description}
         </div>
       </div>
@@ -79,7 +79,7 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
           message.role === "assistant" ? (
             <div
               key={index}
-              className="ml-4 py-2 text-lightBlueText text-justify font-medium text-md"
+              className="ml-4 py-2 text-lightBlueText font-medium text-md"
             >
               <p>
                 {message.content
@@ -95,7 +95,7 @@ const SelectedItemHomePage: React.FC<SelectedItemHomePageProps> = ({
           ) : (
             <div
               key={message.content}
-              className="flex items-center mb-3 bg-bgGrey rounded-xl px-6 pt-2 pb-3 text-whiteText text-justify font-semibold"
+              className="flex items-center mb-3 bg-bgGrey rounded-xl px-6 pt-2 pb-3 text-whiteText font-semibold"
             >
               {message.content
                 .split("\n")
