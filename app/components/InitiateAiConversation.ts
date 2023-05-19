@@ -14,6 +14,7 @@ export default async function InitiateAiConversation(
       headers: {
         Authorization: "Bearer " + process.env.NEXT_PUBLIC_OPENAI_API_KEY,
         "Content-Type": "application/json",
+        "OpenAI-Organization": "org-AJSz876ceFvwcxjKIvPsZPQD",
       },
       body: JSON.stringify(apiRequestBody),
     })
