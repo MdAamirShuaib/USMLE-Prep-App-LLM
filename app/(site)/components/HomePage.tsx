@@ -32,10 +32,10 @@ const HomePage = () => {
               className="flex flex-col px-8 py-4 w-[270px] sm:w-[400px] bg-bgGrey h-full rounded-3xl mx-6 cursor-pointer border border-bgDark hover:border-whiteText hover:scale-105 transition duration-300 mb-10"
               key={item.title}
             >
-              <div className="flex flex-col items-center justify-center text-transparent text-2xl bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 font-bold mt-1">
+              <div className="flex flex-col select-none items-center justify-center text-transparent text-2xl bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 font-bold mt-1">
                 {item.title}
               </div>
-              <div className="flex mt-3 max-h-2/3 text-slate-300 text-center text-sm overflow-clip mb-2">
+              <div className="flex mt-3 select-none max-h-2/3 text-slate-300 text-center text-sm overflow-clip mb-2">
                 {item.description}
               </div>
             </div>
